@@ -1,0 +1,1 @@
+﻿delete Users where Id = @id;

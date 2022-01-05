@@ -1,0 +1,74 @@
+﻿@model Employee.Models.UserModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Подробнее</h1>
+
+<div class="text-center">
+        <form asp-action="Employee">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <label>id</label>
+                        </th>
+                        <th>
+                            <label>Имя</label>
+                        </th>
+                        <th>
+                            <label>Фамилия</label>
+                        </th>
+                        <th>
+                            <label>Телефон</label>
+                        </th>
+                        <th>
+                            <label>Индентификатор компании</label>
+                        </th>
+                        <th>
+                            <label>Тип паспорта</label>
+                        </th>
+                        <th>
+                            <label>Номер паспорта</label>
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <th>
+                                @Html.DisplayFor(modelItem => modelItem.Id)
+                            </th>
+                            <th>
+                                @Html.DisplayFor(modelItem => modelItem.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayFor(modelItem => modelItem.Surname)
+                            </th>
+                            <th>
+                                @Html.DisplayFor(modelItem => modelItem.PhoneNumber)
+                            </th>
+                            <th>
+                                @Html.DisplayFor(modelItem => modelItem.CompanyId)
+                            </th>
+                            <th>
+                                @Html.DisplayFor(modelItem => modelItem.PassportType)
+                            </th>
+                            <th>
+                                @Html.DisplayFor(modelItem => modelItem.PassportNumber)
+                            </th>
+                            <th>
+                                <a asp-action="Edit" asp-route-id="@Model.Id">Изменить</a> |
+                                <a asp-action="Delete" asp-route-id="@Model.Id">Удалить</a>
+                            </th>
+                        </tr>
+                </tbody>
+            </table>
+        </form>
+</div>
+
+<div>
+    <a asp-action="Index">На главную</a>
+</div>
+

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Employee.Models.UserModel>
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Поиск</h1>
+
+<p>
+    <a asp-action="CreateDialog">Create New</a>
+</p>
+<div class="text-center">
+    <form asp-action="Employee">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        <label>id</label>
+                    </th>
+                    <th>
+                        <label>Имя</label>
+                    </th>
+                    <th>
+                        <label>Фамилия</label>
+                    </th>
+                    <th>
+                        <label>Телефон</label>
+                    </th>
+                    <th>
+                        <label>Индентификатор компании</label>
+                    </th>
+                    <th>
+                        <label>Тип паспорта</label>
+                    </th>
+                    <th>
+                        <label>Номер паспорта</label>
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Surname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CompanyId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PassportType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PassportNumber)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Изменить</a> |
+                            <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </form>
+</div>

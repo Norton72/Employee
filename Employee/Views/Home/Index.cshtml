@@ -1,0 +1,19 @@
+﻿@model Employee.Models.UserModel
+
+@{
+    ViewData["Title"] = "Главная";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Главная</h1>
+    <p>
+        <a asp-action="CreateDialog">Добавить сотрудника</a>
+    </p>
+ 
+    <form asp-action="Search">
+        <p>
+            CompanyId:  <input name="id" />
+            <input type="submit" value="Поиск" />
+        </p>
+    </form>
+</div>

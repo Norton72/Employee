@@ -1,0 +1,62 @@
+﻿@model Employee.Models.UserModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы уверены, что хотите удалить этого сотрудника?</h3>
+<div>
+    <h4>Сотрудник</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            <label>Имя</label>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            <label>Фамилия</label>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+        <dt class = "col-sm-2">
+            <label>Телефон</label>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            <label>Индентификатор компании</label>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CompanyId)
+        </dd>
+        <dt class = "col-sm-2">
+            <label>Тип паспорта</label>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PassportType)
+        </dd>
+        <dt class = "col-sm-2">
+            <label>Номан паспорта</label>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PassportNumber)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index">На главную</a>
+    </form>
+</div>
